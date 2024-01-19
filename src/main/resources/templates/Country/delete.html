@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Tutorial of JPA</title>
+</head>
+<body>
+    <h1>Country 削除</h1>
+    <p>削除する国のコードを指定してください。</p>
+    <form>
+    <span th:text="${country.code}">コードがここに表示されます</span>
+    <th:action="@{/country/delete}" method="post">
+        <input type="hidden" name="code" th:value="${country.code}">
+        <button type="submit">送信</button>
+    <a th:href="@{/country/list}">一覧に戻る</a></form>
+</body>
+</html>
